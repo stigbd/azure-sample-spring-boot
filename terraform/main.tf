@@ -89,8 +89,8 @@ resource "azuread_service_principal" "azure_sample_spring_boot" {
   owners                       = [data.azuread_client_config.current.object_id]
 }
 
-resource "random_string" "password" {
-  length  = 32
+resource "random_password" "password" {
+  length  = 16
   special = true
 }
 
@@ -107,18 +107,24 @@ data "azuread_domains" "current" {
 
 # Create a user
 resource "azuread_user" "user" {
-  user_principal_name = "security-${random_string.random.result}@${data.azuread_domains.current.domains.0.domain_name}"
-  display_name        = "security-${random_string.random.result}"
-  password            = "Azure123456@"
+  user_principal_name = "user-${random_string.random.result}@${data.azuread_domains.current.domains.0.domain_name}"
+  display_name        = "user-${random_string.random.result}"
+  password            = random_password.password.result
+}
+
+resource "azuread_user" "admin" {
+  user_principal_name = "admin-${random_string.random.result}@${data.azuread_domains.current.domains.0.domain_name}"
+  display_name        = "admin-${random_string.random.result}"
+  password            = random_password.password.result
 }
 
 resource "azuread_app_role_assignment" "admin" {
   app_role_id         = random_uuid.role-admin.result
-  principal_object_id = azuread_user.user.object_id
+  principal_object_id = azuread_user.admin.object_id
   resource_object_id  = azuread_service_principal.azure_sample_spring_boot.object_id
 }
 
-resource "azuread_app_role_assignment" "user_role" {
+resource "azuread_app_role_assignment" "user" {
   app_role_id         = random_uuid.role-user.result
   principal_object_id = azuread_user.user.object_id
   resource_object_id  = azuread_service_principal.azure_sample_spring_boot.object_id

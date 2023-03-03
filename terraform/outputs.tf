@@ -24,6 +24,17 @@ output "USER_PASSWORD" {
   description = "The password of the user created by terraform."
 }
 
+output "ADMIN_NAME" {
+  value       = azuread_user.admin.user_principal_name
+  description = "The user name of the admin user created by terraform."
+}
+
+output "ADMIN_PASSWORD" {
+  value       = azuread_user.admin.password
+  sensitive   = true
+  description = "The password of the admin user created by terraform."
+}
+
 # Output the Service Principal and password
 output "SERVICE_PRINCIPAL" {
   value     = azuread_service_principal.azure_sample_spring_boot.id
