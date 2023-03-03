@@ -16,7 +16,7 @@ public class MainController {
 
     @GetMapping("/user")
     @ResponseBody
-    @PreAuthorize("hasAuthority('APPROLE_User')")
+    @PreAuthorize("hasAuthority('APPROLE_UserRule')")
     public String userMethod() {
         return "Hello User!";
     }
