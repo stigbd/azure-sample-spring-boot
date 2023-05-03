@@ -2,11 +2,7 @@ openapi: 3.0.3
 info:
   title: Azure sample spring boot
   description: |
-    The race service let you administrate the main domain objects
-    - race,
-    - race plan,
-    - startlist
-    - race_results
+    This is a sample spring boot application that is deployed to Azure.
   version: "1.0"
   license:
     name: Apache 2.0
