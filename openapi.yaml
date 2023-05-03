@@ -1,0 +1,55 @@
+openapi: 3.1.0
+info:
+  title: Azure sample spring boot
+  description: |
+    The race service let you administrate the main domain objects
+    - race,
+    - race plan,
+    - startlist
+    - race_results
+  version: "1.0"
+  license:
+    name: Apache 2.0
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+paths:
+  /public:
+    get:
+      description: Get a public resource
+      responses:
+        200:
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+  /user:
+    get:
+      description: Get a protected resource
+      security:
+        - openId:
+            - user_rule
+      responses:
+        200:
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+  /admin:
+    get:
+      description: Get an admin  resource
+      security:
+        - openId:
+            - admin_rule
+      responses:
+        200:
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+components:
+  securitySchemes:
+    openId:
+      type: openIdConnect
+      openIdConnectUrl: https://example.com/.well-known/openid-configuration

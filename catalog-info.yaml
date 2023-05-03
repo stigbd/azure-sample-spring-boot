@@ -1,10 +1,12 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: API
 metadata:
   name: azure-sample-spring-boot
   annotations:
     github.com/project-slug: stigbd/azure-sample-spring-boot
 spec:
-  type: other
-  lifecycle: unknown
-  owner: guests
+  type: openapi
+  owner: stigbd
+  lifecycle: development
+  definition:
+    $text: ./openapi.yaml
