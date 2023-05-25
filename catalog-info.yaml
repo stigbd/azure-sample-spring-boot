@@ -16,10 +16,10 @@ kind: Component
 metadata:
   name: azure-sample-spring-boot-component
   annotations:
-    github.com/project-slug: stigbd/azure-sample-spring-boot
+    backstage.io/tech-docs: dir:.
+  tags:
+    - usage:internal
 spec:
   type: dataset
   owner: stigbd
   lifecycle: development
-  definition:
-    $text: ./dataset.yaml
