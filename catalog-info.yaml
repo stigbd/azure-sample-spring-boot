@@ -2,6 +2,8 @@ apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: azure-sample-spring-boot-api
+  description: |
+    This is a sample API for Azure Spring Boot.
   annotations:
     github.com/project-slug: stigbd/azure-sample-spring-boot
 spec:
@@ -15,6 +17,8 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: azure-sample-spring-boot-component
+  description: |
+    This is a sample dataset for Azure Spring Boot.
   annotations:
     backstage.io/tech-docs: dir:.
   tags:
