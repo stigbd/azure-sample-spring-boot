@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: azure-sample-spring-boot
+  name: azure-sample-spring-boot-api
   annotations:
     github.com/project-slug: stigbd/azure-sample-spring-boot
 spec:
@@ -10,3 +10,16 @@ spec:
   lifecycle: development
   definition:
     $text: ./openapi.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: azure-sample-spring-boot-component
+  annotations:
+    github.com/project-slug: stigbd/azure-sample-spring-boot
+spec:
+  type: dataset
+  owner: stigbd
+  lifecycle: development
+  definition:
+    $text: ./dataset.yaml
