@@ -20,7 +20,7 @@ metadata:
   description: |
     This is a sample dataset for Azure Spring Boot.
   annotations:
-    backstage.io/tech-docs: dir:.
+    backstage.io/techdocs-ref: dir:.
   tags:
     - usage:internal
 spec:
