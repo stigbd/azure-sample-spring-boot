@@ -1,4 +1,6 @@
-# My dataset
+# My dataset description
+
+This is a sample dataset description using [dcat](https://www.w3.org/TR/vocab-dcat-3/).
 
 ```yaml
 dcat: 3.0.0
