@@ -16,7 +16,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: azure-sample-spring-boot-component
+  name: azure-sample-spring-boot-dataset
   description: |
     This is a sample dataset for Azure Spring Boot.
   annotations:
