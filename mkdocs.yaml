@@ -1,7 +1,7 @@
 site_name: "my-azure-sample-spring-boot-dataset"
 
 nav:
-  - Home: index.md
+  - My dataset: index.md
 
 plugins:
   - techdocs-core
