@@ -20,10 +20,10 @@ metadata:
   description: |
     This is a sample dataset for Azure Spring Boot.
   annotations:
-    backstage.io/techdocs-ref: dir:.
-  tags:
-    - usage:internal
+    github.com/project-slug: stigbd/azure-sample-spring-boot
 spec:
   type: dataset
   owner: stigbd
   lifecycle: development
+  definition:
+    $text: ./dataset.yaml
