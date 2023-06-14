@@ -2,7 +2,19 @@
 
 A small demo project to show how to use Azure Spring Boot Starter.
 
-## How to run
+## How to run the tests
+
+```bash
+mvn clean test
+```
+
+## How to run the tests with coverage
+
+```bash
+mvn clean verify
+```
+
+## How to run the application
 
 ```bash
 mvn clean spring-boot:run
