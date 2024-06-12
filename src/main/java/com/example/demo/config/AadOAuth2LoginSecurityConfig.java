@@ -20,14 +20,12 @@ public class AadOAuth2LoginSecurityConfig {
      */
     @Bean
     public SecurityFilterChain htmlFilterChain(HttpSecurity http) throws Exception {
-       // @formatter:off
-       http.apply(AadWebApplicationHttpSecurityConfigurer.aadWebApplication())
-               .and()
-           .authorizeHttpRequests()
+        http.apply(AadWebApplicationHttpSecurityConfigurer.aadWebApplication())
+                .and()
+                .authorizeHttpRequests()
                 .requestMatchers("/public").permitAll()
-                .requestMatchers(EndpointRequest.toAnyEndpoint()).permitAll() 
-               .anyRequest().authenticated();
-       // @formatter:on
+                .requestMatchers(EndpointRequest.toAnyEndpoint()).permitAll()
+                .anyRequest().authenticated();
         // Do some custom configuration.
         return http.build();
     }
